@@ -8,5 +8,6 @@ class AddColumnToHouse < ActiveRecord::Migration
     add_column :houses, :toilet, :string
     add_column :houses, :price, :integer
     add_column :houses, :note, :string
+    add_column :houses, :latitude, :float
   end
 end

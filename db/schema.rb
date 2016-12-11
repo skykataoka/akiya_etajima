@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161211052708) do
     t.string   "toilet"
     t.integer  "price"
     t.string   "note"
+    t.float    "latitude"
   end
 
   create_table "images", force: :cascade do |t|
