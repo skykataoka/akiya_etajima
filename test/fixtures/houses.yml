@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment_id: 1
+  favorite_id: 1
+  adress: MyString
+  longitude: 1.5
+  tel: MyString
+  email: MyString
+  release_status: false
+  expenses_status: false
+
+two:
+  comment_id: 1
+  favorite_id: 1
+  adress: MyString
+  longitude: 1.5
+  tel: MyString
+  email: MyString
+  release_status: false
+  expenses_status: false
