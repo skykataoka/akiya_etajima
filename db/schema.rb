@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211052708) do
+ActiveRecord::Schema.define(version: 20161211063529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20161211052708) do
   create_table "houses", force: :cascade do |t|
     t.integer  "comment_id"
     t.integer  "favorite_id"
-    t.string   "adress"
+    t.string   "address"
     t.float    "longitude"
     t.string   "tel"
     t.string   "email"
