@@ -1,7 +1,71 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# 10.times do
+#   email = Faker::Internet.email
+#   name = Faker::Name.name
+#   password = "password"
+#   status = false
+#   User.create!(
+#                name: name,
+#                email: email,
+#                password: password,
+#                password_confirmation: password,
+#                status: status
+#   )
+# end
 #
-# Examples:
+# 20.times do
+#   address = Faker::Address.state + Faker::Address.city
+#   latitude = Faker::Address.latitude
+#   longitude = Faker::Address.longitude
+#   tel = Faker::PhoneNumber.cell_phone
+#   email = Faker::Internet.email
+#   title = Yoshida::Text.word
+#   description = Yoshida::Text.sentence
+#   House.create!(
+#                address: address,
+#                latitude: latitude,
+#                longitude: longitude,
+#                tel: tel,
+#                email: email,
+#                title: title,
+#                description: description
+#   )
+# end
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# 20.times do |i|
+#   house_id = i+1
+#   content = Yoshida::Text.sentences(10).join
+#   Article.create!(
+#     house_id: house_id,
+#     content: content
+#   )
+# end
+#
+# 20.times do
+#   user_id = [*1..10].sample
+#   house_id = [*1..20].sample
+#   content = Yoshida::Text.sentence
+#   Comment.create!(
+#                user_id: user_id,
+#                house_id: house_id,
+#                content: content
+#   )
+# end
+#
+# 60.times do
+#   article_id = [*1..10].sample
+#   avator = Faker::Avatar.image
+#   Image.create!(
+#     article_id: article_id,
+#     avator: avator
+#   )
+# end
+
+60.times do
+  user_id = [*1..10].sample
+  house_id = [*1..20].sample
+  Favorite.create!(
+    user_id: user_id,
+    house_id: house_id
+  )
+end
+
