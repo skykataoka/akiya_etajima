@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    
+    <p><%= notice %></p>
+
+    <h1>空き家の詳細</h1>
+    <p>更新日:<%= @house.updated_at %></p>
+      <div class="row">
+        <h4><strong><%= @house.title %></strong></h4>
+        <p>本文:<%= @house.description %></p>
+        <p>広さ:<%= @house.scale %></p>
+        <p>構造1:<%= @house.construction %></p>
+        <p>構造2:<%= @house.structure %></p>
+        <p>トイレ:<%= @house.toilet %></p>
+        <p>価格:<%= @house.price %></p>
+        <p>メモ:<%= @house.note %></p>
+        <p>記事:<%= @house.article.content %></p>
+        
+        <% if @house.article.images[0] %>
+          <% @house.article.images.each do |image| %>
+          <p>画像:<br><%= image_tag(image.avator)%></p>
+          <% end %>
+          
+        <p>住所:<%= @house.address %></p>
+        <p>電話番号:<%= @house.tel %></p>
+        <p>メール:<%= @house.email %></p>
+        <p>売買可否:<%= @house.release_status %></p>
+        <p>賃貸可否:<%= @house.description %></p>
+        
+      </div>
+      <hr>
+    <% end %>
+
+  </div>
+  <div id="page-top-btn" class="page-top-btn">
+        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+  </div>
+  
+</div>

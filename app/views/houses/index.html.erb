@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    
+    <p><%= notice %></p>
+
+    <h1>ブログ一覧</h1>
+    <%= link_to "空き家データを作成する", new_house_path, class:'btn btn-default' %>
+    <% @houses.each do |house| %>
+      <div class="row">
+        <hr>
+        <h4><strong><%= link_to  house.title , house_path(house.id) %></strong></h4>
+        <p>本文:<%= house.description %></p>
+        <% if house.article.images[0] %>
+          <p>画像:<br><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
+        <% end %>
+        <%= link_to "詳細", house_path(house.id), data: { confirm: '本当にみちゃう??' }, class: 'btn btn-default btn-sm btn-success' %>
+      </div>
+    <% end %>
+
+  </div>
+  <div id="page-top-btn" class="page-top-btn">
+        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+  </div>
+  
+</div>
