@@ -1,3 +1,22 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-picture {
+  height: 580px;
+  background-size: cover;
+  background: url('top.jpg') no-repeat;
+}
+.header {
+  height: 470px;
+  text-align: center;
+  padding-top: 20px;
+  background-color: #86BDE2;
+}
+.header > h1 {
+  font-size: 60px;
+  color: #FFFFFF;
+  margin: 0;
+}
+.content {
+  height: 200px;
+  text-align: center;
+}
+
+
