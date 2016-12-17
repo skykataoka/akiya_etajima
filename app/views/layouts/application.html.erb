@@ -8,6 +8,30 @@
 </head>
 <body>
 
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "空き家一覧", houses_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+              <li><%= link_to '新規登録', new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+
+
+
+
+
 <%= yield %>
 
 </body>
