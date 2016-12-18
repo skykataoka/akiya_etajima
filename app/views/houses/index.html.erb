@@ -1,8 +1,5 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    
-    <p><%= notice %></p>
-
     <h1>空き家一覧</h1>
     <%= link_to "空き家データを作成する", new_house_path, class:'btn btn-default' %>
     <% @houses.each do |house| %>
@@ -16,10 +13,8 @@
         <%= link_to "詳細", house_path(house.id), data: { confirm: '本当にみちゃう??' }, class: 'btn btn-default btn-sm btn-success' %>
       </div>
     <% end %>
-
   </div>
   <div id="page-top-btn" class="page-top-btn">
-        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
   </div>
-  
 </div>
