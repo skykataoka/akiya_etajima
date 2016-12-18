@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="wrapper col-md-4 col-md-offset-5 col-sm-10">
+    <h2>ログイン</h2>
+    
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :パスワード %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div>
+    
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :記憶させる %>
+        </div>
+      <% end -%>
+    
+      <div class="actions">
+        <%= f.submit "ログイン",class: "btn btn-primary btn-block btn-sucsess" %>
+      </div>
+    <% end %>
+    
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

@@ -8,19 +8,18 @@
       <div class="row">
         <h4><strong><%= @house.title %></strong></h4>
         <p>本文:<%= @house.description %></p>
-        <p>広さ:<%= @house.scale %></p>
-        <p>構造1:<%= @house.construction %></p>
-        <p>構造2:<%= @house.structure %></p>
-        <p>トイレ:<%= @house.toilet %></p>
-        <p>価格:<%= @house.price %></p>
-        <p>メモ:<%= @house.note %></p>
         <p>記事:<%= @house.article.content %></p>
         
         <% if @house.article.images[0] %>
           <% @house.article.images.each do |image| %>
           <p>画像:<br><%= image_tag(image.avator)%></p>
           <% end %>
-          
+        <p>広さ:<%= @house.scale %></p>
+        <p>構造1:<%= @house.construction %></p>
+        <p>構造2:<%= @house.structure %></p>
+        <p>トイレ:<%= @house.toilet %></p>
+        <p>価格:<%= @house.price %></p>
+        <p>メモ:<%= @house.note %></p>          
         <p>住所:<%= @house.address %></p>
         <p>電話番号:<%= @house.tel %></p>
         <p>メール:<%= @house.email %></p>
