@@ -32,6 +32,7 @@ gem 'jquery-turbolinks'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +46,5 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'yoshida'
-  gem 'devise'
 end
 
