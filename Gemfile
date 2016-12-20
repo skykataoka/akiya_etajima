@@ -34,7 +34,9 @@ gem 'jquery-turbolinks'
 # gem 'capistrano-rails', group: :development
 gem 'devise'
 gem 'geocoder'
-gem 'google_places'
+gem 'gmaps4rails'
+gem 'jquery-gmap3-rails'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'dotenv-rails'
