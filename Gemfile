@@ -33,6 +33,14 @@ gem 'jquery-turbolinks'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'jquery-gmap3-rails'
+gem 'font-awesome-rails'
+
+group :development do
+  gem 'dotenv-rails'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,4 +55,3 @@ group :development, :test do
   gem 'pry-rails'
   gem 'yoshida'
 end
-

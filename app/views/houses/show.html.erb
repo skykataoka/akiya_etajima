@@ -22,6 +22,7 @@
         <p>売買可否:<%= @house.release_status %></p>
         <p>賃貸可否:<%= @house.description %></p>
       </div>
+      <div id="detail-map"></div>
       <hr>
     <% end %>
   </div>
@@ -29,3 +30,14 @@
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
   </div>
 </div>
+<script>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: {id: 'detail-map'}}, function(){
+        var circles = handler.addCircles(
+            [{ lat: <%= @pin[0][:lat] %>, lng: <%= @pin[0][:lng] %>, radius: 200 }],
+            { strokeColor: '#ffffff' , fillColor: '#FF0000', strokeWeight: 0 , strokeOpacity: 0.4}
+        );
+        handler.bounds.extendWith(circles);
+        handler.fitMapToBounds();
+    });
+</script>
