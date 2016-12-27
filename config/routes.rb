@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'top#index'
   devise_for :users
-  resources :houses
+  resources :houses do
+    resources :favorites , only: [:create, :destroy]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
