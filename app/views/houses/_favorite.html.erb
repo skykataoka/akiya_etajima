@@ -1,0 +1,8 @@
+<% if house.favorites.find_by(user_id: current_user) %>
+    <p>お気に入り済み</p>
+    <%= link_to fa_icon("star",class: "fa-2x"), house_favorite_path(favorite, house_id: house.id), id: "delete-favorite-button", method: :delete, remote: true %>
+    <p>お気に入り: <%= house.favorite_count %></p>
+<% else %>
+    <%= link_to fa_icon("star",class: "fa-2x"), house_favorites_path(house.id), id: "add-favorite-button", method: :post, remote: true %>
+    <p>お気に入り: <%= house.favorite_count ||= 0 %></p>
+<% end %>

@@ -22,14 +22,9 @@
         <p>メール:<%= @house.email %></p>
         <p>売買可否:<%= @house.release_status %></p>
         <p>賃貸可否:<%= @house.description %></p>
-        <% if @house.favorites.find_by(user_id: current_user) %>
-          <p>お気に入り済み</p>
-          <%= link_to fa_icon("star",class: "fa-2x"), house_favorite_path(@favorite, house_id: @house.id), id: "delete-favorite-button", method: :delete %>
-          <p>お気に入り: <%= @house.favorite_count %></p>
-        <% else %>
-          <%= link_to fa_icon("star",class: "fa-2x"), house_favorites_path(@house.id), id: "add-favorite-button", method: :post %>
-          <p>お気に入り: <%= @house.favorite_count ||= 0 %></p>
-        <% end %>
+        <div id="favorite">
+          <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+        </div>
         <div id="detail-map"></div>
       </div>
       <hr>
