@@ -37,6 +37,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-gmap3-rails'
 gem 'font-awesome-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 group :development do
   gem 'dotenv-rails'
