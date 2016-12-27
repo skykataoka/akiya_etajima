@@ -64,11 +64,11 @@ end
   )
 end
 
-60.times do
-  user_id = [*1..10].sample
-  house_id = [*1..32].sample
-  Favorite.create!(
-    user_id: user_id,
-    house_id: house_id
-  )
-end
+# 60.times do
+#   user_id = [*1..10].sample
+#   house_id = [*1..32].sample
+#   Favorite.create!(
+#     user_id: user_id,
+#     house_id: house_id
+#   )
+# end
