@@ -53,16 +53,16 @@ end
   )
 end
 
-# 20.times do
-#   user_id = [*1..10].sample
-#   house_id = [*1..32].sample
-#   content = Yoshida::Text.sentence
-#   Comment.create!(
-#     user_id: user_id,
-#     house_id: house_id,
-#     content: content
-#   )
-# end
+20.times do
+  user_id = [*1..10].sample
+  house_id = [*1..32].sample
+  content = Yoshida::Text.sentence
+  Comment.create!(
+    user_id: user_id,
+    house_id: house_id,
+    content: content
+  )
+end
 
 # 60.times do
 #   user_id = [*1..10].sample
@@ -72,4 +72,3 @@ end
 #     house_id: house_id
 #   )
 # end
-

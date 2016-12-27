@@ -10,6 +10,7 @@
           <% @house.article.images.each do |image| %>
           <p>画像:<br><%= image_tag(image.avator)%></p>
           <% end %>
+        <% end %>
         <p>広さ:<%= @house.scale %></p>
         <p>構造1:<%= @house.construction %></p>
         <p>構造2:<%= @house.structure %></p>
@@ -21,15 +22,18 @@
         <p>メール:<%= @house.email %></p>
         <p>売買可否:<%= @house.release_status %></p>
         <p>賃貸可否:<%= @house.description %></p>
+        <div id="favorite">
+          <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+        </div>
+        <div id="detail-map"></div>
       </div>
-      <div id="detail-map"></div>
       <hr>
-    <% end %>
   </div>
   <div id="page-top-btn" class="page-top-btn">
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
   </div>
 </div>
+
 <script>
     var handler = Gmaps.build('Google');
     handler.buildMap({ internal: {id: 'detail-map'}}, function(){
