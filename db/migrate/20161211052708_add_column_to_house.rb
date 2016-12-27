@@ -9,5 +9,6 @@ class AddColumnToHouse < ActiveRecord::Migration
     add_column :houses, :price, :integer
     add_column :houses, :note, :string
     add_column :houses, :latitude, :float
+    add_column :houses, :favorite_count, :integer
   end
 end
