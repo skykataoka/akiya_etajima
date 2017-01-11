@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <div class="favorite_panel">
+      <div class="panel panel-default">
+        <div class="panel-heading">お気に入り一覧</div>
+        <ul class="list-group">
+          <% @favorite_houses.each do |house| %>
+            <li class="list-group-item">
+              <%= link_to house.title,  house_path(house) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <%= @user.email %>
+    <%= link_to 'プロフィールを編集する', edit_user_registration_path %>
+  </div>
+</div>
