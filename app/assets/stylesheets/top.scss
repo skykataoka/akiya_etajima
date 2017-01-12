@@ -1,12 +1,12 @@
 .main-picture {
-  height: 580px;
+  height: 1000px;
   background-size: cover;
-  background: url('top.jpg') no-repeat;
+  background: url('top-image.jpg') no-repeat;
 }
 .header {
-  height: 470px;
+  height: 100%;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px;
   background-color: #86BDE2;
 }
 .header > h1 {
