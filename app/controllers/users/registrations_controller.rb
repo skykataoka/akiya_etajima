@@ -8,7 +8,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
+  # def create
+  #   super
+  # end
+  
+  def build_resource(hash=nil)
+    new_hash = {}
+    new_hash[:occupation] = params[:occupation]
+    new_hash[:sex] = params[:sex]
+    new_hash[:spouse] = params[:spouse]
+    hash.merge!(new_hash)
     super
   end
 
