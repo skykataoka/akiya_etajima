@@ -27,7 +27,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
+  def update
+    new_hash = {}
+    new_hash[:occupation] = params[:occupation]
+    new_hash[:sex] = params[:sex]
+    new_hash[:spouse] = params[:spouse]
+    params[:user].merge!(new_hash)
+    binding.pry
+    super
+  end
+  
+  # def update_resource(resource, params)
   #   super
   # end
 
