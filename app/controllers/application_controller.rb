@@ -15,5 +15,38 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
       devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:birthday,
+                                                         :avator,
+                                                         :address,
+                                                         :introduction,
+                                                         :want_to_do,
+                                                         :hobby,
+                                                         :skill,
+                                                         :occupation,
+                                                         :sex,
+                                                         :spouse,
+                                                         :child,
+                                                         :number_of_occupants,
+                                                         :budget_for_rent,
+                                                         :budget_for_buy,
+                                                         :status
+                                                        ])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:birthday,
+                                                         :avator,
+                                                         :address,
+                                                         :introduction,
+                                                         :want_to_do,
+                                                         :hobby,
+                                                         :skill,
+                                                         :occupation,
+                                                         :sex,
+                                                         :spouse,
+                                                         :child,
+                                                         :number_of_occupants,
+                                                         :budget_for_rent,
+                                                         :budget_for_buy,
+                                                         :status
+                                                        ])
     end
 end

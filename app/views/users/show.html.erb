@@ -1,5 +1,27 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <div class="user_panel">
+      <div class="panel panel-default">
+        <div class="panel-heading">ユーザー情報</div>
+        <ul class="list-group">
+          <li class="list-group-item"><%= @user.name %></li>
+          <li class="list-group-item"><%= @user.email %></li>
+          <li class="list-group-item"><%= @user.birthday %></li>
+          <li class="list-group-item"><%= @user.address %></li>
+          <li class="list-group-item"><%= @user.introduction %></li>
+          <li class="list-group-item"><%= @user.want_to_do %></li>
+          <li class="list-group-item"><%= @user.hobby %></li>
+          <li class="list-group-item"><%= @user.skill %></li>
+          <li class="list-group-item"><%= @user.occupation %></li>
+          <li class="list-group-item"><%= @user.sex %></li>
+          <li class="list-group-item"><%= @user.spouse %></li>
+          <li class="list-group-item"><%= @user.child %></li>
+          <li class="list-group-item"><%= @user.number_of_occupants %> 人</li>
+          <li class="list-group-item"><%= @user.budget_for_rent %></li>
+          <li class="list-group-item"><%= @user.budget_for_buy %></li>
+        </ul>
+      </div>
+    </div>
     <div class="favorite_panel">
       <div class="panel panel-default">
         <div class="panel-heading">お気に入り一覧</div>

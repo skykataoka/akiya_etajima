@@ -4,12 +4,121 @@
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-    
+      <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :name, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
       <div class="field">
         <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
-    
+      <br>
+
+      <div class="field">
+      <%= f.label :生年月日 %>
+      <%= raw sprintf(
+                  f.date_select(
+                      :birthday,
+                      { use_month_numbers: true,
+                      start_year:        1930,
+                      end_year:          (Time.now.year - 18),
+                      default:           Date.new(1989, 1, 1),
+                      date_separator:    '%s' }, {class: "form-control"} ),
+                  '年 ', '月 ') + '日' %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :住所 %><br />
+        <%= f.text_field :address, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :自己紹介 %><br />
+        <%= f.text_area :introduction, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :この地域でやりたいこと %><br />
+        <%= f.text_area :want_to_do, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :趣味 %><br />
+        <%= f.text_field :hobby, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label '特技・資格' %><br />
+        <%= f.text_area :skill, autocomplete: "off", class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :職業 %><br />
+        <%= f.select_tag :occupation , options_for_select({
+                                                    '公務員':            '公務員',
+                                                    '経営者・役員':       '経営者・役員',
+                                                    '会社員':            '会社員',
+                                                    '自営業':            '自営業',
+                                                    '自由業':            '自由業',
+                                                    '専業主婦':          '専業主婦',
+                                                    'パート・アルバイト':  'パート・アルバイト',
+                                                    'その他':            'その他',
+                                                   }), class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :性別 %><br />
+        <%= f.select_tag :sex , options_for_select({
+                                                        '男性':   '男性',
+                                                        '女性':   '女性',
+                                                        'その他':  'その他'
+                                                    }), class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :未既婚 %><br />
+        <%= f.select_tag :spouse , options_for_select({
+                                                       '既婚':   '既婚',
+                                                       '独身':   '独身',
+                                                       'その他':  'その他'
+                                                   }), class: "form-control" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :子どもの人数 %><br />
+        <%= f.number_field(:child, in: 0..20) %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :入居人数 %><br />
+        <%= f.number_field(:number_of_occupants , in: 0..20) %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :希望賃貸額 %><br />
+        <%= f.number_field(:budget_for_rent, in: 0..1000) %>
+      </div>
+      <br>
+
+      <div class="field">
+        <%= f.label :希望購入額 %><br />
+        <%= f.number_field(:budget_for_buy, in: 0..1000) %>
+      </div>
+      <br>
+
       <div class="field">
         <%= f.label :パスワード %>
         <% if @minimum_password_length %>
@@ -23,7 +132,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div>
       <br>
-    
+
       <div class="actions">
         <%= f.submit "新規作成", class: "btn btn-primary btn-block btn-sucsess" %>
       </div>
