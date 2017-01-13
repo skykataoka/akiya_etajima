@@ -3,7 +3,7 @@ class AddColumnToUser < ActiveRecord::Migration
     add_column :users, :name, :string
     add_column :users, :avator, :string
     add_column :users, :birthday, :date
-    add_column :users, :adress, :string
+    add_column :users, :address, :string
     add_column :users, :introduction, :text
     add_column :users, :want_to_do, :text
     add_column :users, :hobby, :string

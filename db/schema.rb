@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20170113021635) do
     t.string   "name"
     t.string   "avator"
     t.date     "birthday"
-    t.string   "adress"
+    t.string   "address"
     t.text     "introduction"
     t.text     "want_to_do"
     t.string   "hobby"
