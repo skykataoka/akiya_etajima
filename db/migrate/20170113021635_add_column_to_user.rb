@@ -10,11 +10,11 @@ class AddColumnToUser < ActiveRecord::Migration
     add_column :users, :skill, :string
     add_column :users, :occupation, :string
     add_column :users, :sex, :string
-    add_column :users, :is_spouse, :boolean
+    add_column :users, :spouse, :string
     add_column :users, :child, :integer
     add_column :users, :number_of_occupants, :integer
     add_column :users, :budget_for_rent, :integer
     add_column :users, :budget_for_buy, :integer
-    add_column :users, :status, :integer
+    add_column :users, :status, :integer, default: 0
   end
 end

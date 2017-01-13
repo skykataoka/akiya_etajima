@@ -91,12 +91,12 @@ ActiveRecord::Schema.define(version: 20170113021635) do
     t.string   "skill"
     t.string   "occupation"
     t.string   "sex"
-    t.boolean  "is_spouse"
+    t.string   "spouse"
     t.integer  "child"
     t.integer  "number_of_occupants"
     t.integer  "budget_for_rent"
     t.integer  "budget_for_buy"
-    t.integer  "status"
+    t.integer  "status",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
