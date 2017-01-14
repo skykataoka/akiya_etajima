@@ -27,7 +27,7 @@
     for (var i = 0; i < markers.length; i++) {
       var link = markers_json[i].link;
       google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(){
-        window.open(link);
+        window.location.href = link;
       })
       attachSecretMessage(markers[i], markers_json[i]);
     }
