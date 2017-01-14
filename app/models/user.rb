@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
    houses
  end
   
+  def status_admin?
+    status === 3
+  end
+  
 end
