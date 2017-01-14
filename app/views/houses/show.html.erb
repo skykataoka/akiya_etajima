@@ -35,13 +35,13 @@
 </div>
 
 <script>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: {id: 'detail-map'}}, function(){
-        var circles = handler.addCircles(
-            [{ lat: <%= @pin[0][:lat] %>, lng: <%= @pin[0][:lng] %>, radius: 200 }],
-            { strokeColor: '#ffffff' , fillColor: '#FF0000', strokeWeight: 0 , strokeOpacity: 0.4}
-        );
-        handler.bounds.extendWith(circles);
-        handler.fitMapToBounds();
-    });
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'detail-map'}}, function(){
+    var circles = handler.addCircles(
+      [{ lat: <%= @pin[0][:lat] %>, lng: <%= @pin[0][:lng] %>, radius: 200 }],
+      { strokeColor: '#ffffff' , fillColor: '#FF0000', strokeWeight: 0 , strokeOpacity: 0.4}
+    );
+    handler.bounds.extendWith(circles);
+    handler.fitMapToBounds();
+  });
 </script>
