@@ -23,6 +23,9 @@
               <li><%= link_to 'ログイン', new_user_session_path %></li>
               <li><%= link_to '新規登録', new_user_registration_path %></li>
             <% end %>
+            <% if current_user.try(:status_admin?)  %>
+              <li><%= link_to '管理', rails_admin_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
