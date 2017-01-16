@@ -1,7 +1,7 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <h1>空き家一覧</h1>
-    <%= link_to "空き家データを作成する", new_house_path, class:'btn btn-default' %>
+    <div id="map_all"></div>
     <% @houses.each do |house| %>
       <div class="row">
         <hr>
@@ -18,3 +18,31 @@
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
   </div>
 </div>
+
+<script>
+  var handler = Gmaps.build('Google');
+  markers_json = <%=raw @hash.to_json %>;
+  handler.buildMap({ provider: {}, internal: {id: 'map_all'}}, function(){
+    var markers = handler.addMarkers(markers_json);
+    handler.bounds.extendWith(markers);
+    for (var i = 0; i < markers.length; i++) {
+      var link = markers_json[i].link;
+      google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(){
+        window.location.href = link;
+      })
+      attachSecretMessage(markers[i], markers_json[i]);
+    }
+    function attachSecretMessage(marker, markers_json) {
+      var infowindow = new google.maps.InfoWindow({
+        content:  markers_json.infowindow
+      });
+      google.maps.event.addListener(marker.getServiceObject(), 'mouseover', function() {
+        infowindow.open(marker, this);
+      });
+      google.maps.event.addListener(marker.getServiceObject(), 'mouseout', function(){
+        infowindow.close();
+      });
+    }
+    handler.fitMapToBounds();
+  });
+</script>

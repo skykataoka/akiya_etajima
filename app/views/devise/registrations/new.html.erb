@@ -97,25 +97,25 @@
 
       <div class="field">
         <%= f.label :子どもの人数 %><br />
-        <%= f.number_field(:child, in: 0..20) %>
+        <%= f.number_field(:child, in: 0..20) + ' 人' %>
       </div>
       <br>
 
       <div class="field">
         <%= f.label :入居人数 %><br />
-        <%= f.number_field(:number_of_occupants , in: 0..20) %>
+        <%= f.number_field(:number_of_occupants , in: 0..20) + ' 人' %>
       </div>
       <br>
 
       <div class="field">
         <%= f.label :希望賃貸額 %><br />
-        <%= f.number_field(:budget_for_rent, in: 0..1000) %>
+        <%= f.number_field(:budget_for_rent, in: 0..99) + ' 万円' %>
       </div>
       <br>
 
       <div class="field">
         <%= f.label :希望購入額 %><br />
-        <%= f.number_field(:budget_for_buy, in: 0..1000) %>
+        <%= f.number_field(:budget_for_buy, in: 0..9999) + ' 万円' %>
       </div>
       <br>
 

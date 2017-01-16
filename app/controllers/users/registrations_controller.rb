@@ -33,7 +33,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_hash[:sex] = params[:sex]
     new_hash[:spouse] = params[:spouse]
     params[:user].merge!(new_hash)
-    binding.pry
     super
   end
   
