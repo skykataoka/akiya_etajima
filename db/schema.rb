@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20170113021635) do
     t.integer  "price"
     t.string   "note"
     t.float    "latitude"
-    t.integer  "favorite_count"
   end
 
   create_table "images", force: :cascade do |t|

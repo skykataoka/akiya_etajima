@@ -10,6 +10,7 @@
         <% if house.article.images[0] %>
           <p>画像:<br><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
         <% end %>
+        <%= link_to "詳細", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %>
       </div>
     <% end %>
   </div>
