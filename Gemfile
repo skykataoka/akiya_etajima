@@ -40,6 +40,8 @@ gem 'font-awesome-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem 'rails_admin'
 gem 'cancancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development do
   gem 'dotenv-rails'
