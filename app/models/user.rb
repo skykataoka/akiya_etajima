@@ -38,18 +38,39 @@ class User < ActiveRecord::Base
   end
   
   def calculate_profile
-    [self[:email],
-     self[:name],
-     self[:birthday],
-     self[:introduction],
-     self[:want_to_do],
-     self[:hobby],
-     self[:occupation],
-     self[:sex],
-     self[:spouse],
-     self[:child],
-     self[:number_of_occupants],
-     self[:budget_for_rent],
-     self[:budget_for_buy]]
+    user_columns = [self[:email],
+                    self[:name],
+                    self[:birthday],
+                    self[:introduction],
+                    self[:want_to_do],
+                    self[:hobby],
+                    self[:occupation],
+                    self[:sex],
+                    self[:spouse],
+                    self[:child],
+                    self[:number_of_occupants],
+                    self[:budget_for_rent],
+                    self[:budget_for_buy]
+    ]
+    insufficient_count = 0
+    user_columns.each do |user_column|
+      if user_column.blank?
+        insufficient_count += 1
+      end
+    end
+    profile_fulfillment_level = 100 - insufficient_count / user_columns.count.to_f * 100
+  end
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+  
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+  
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
 end

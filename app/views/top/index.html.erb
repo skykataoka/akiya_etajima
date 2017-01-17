@@ -1,3 +1,8 @@
+<% if current_user.try(:calculate_profile) < 80 %>
+  <div id="root-sub-header">
+    <%= link_to 'プロフィール完成度が不十分です。あなたを正しく伝えられるように充実させてみましょう。', edit_user_registration_path(current_user) %>
+  </div>
+<% end %>
 <div class="header">
   <div class="logo">
     <% image_tag asset_path "etajima.svg" %>

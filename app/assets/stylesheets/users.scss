@@ -9,3 +9,26 @@
 a:hover, a:focus {
   text-decoration: none;
 }
+
+#root-sub-header {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  background: #FED100;
+  position: relative;
+}
+
+#root-sub-header p {
+  margin-bottom: 0px;
+}
+
+#root-sub-header a {
+  color: #000000;
+  text-decoration: none;
+}
+
+#root-sub-header a:hover, a:focus {
+  color: #9a9a9a;
+}

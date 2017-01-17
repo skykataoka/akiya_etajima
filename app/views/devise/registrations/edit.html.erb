@@ -108,23 +108,20 @@
         <%= f.number_field(:budget_for_buy, in: 0..1000) %>
       </div>
       <br>
-      <div class="field">
-        <%= f.label :パスワード %>
-        <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      </div>
-      <div class="field">
-        <%= f.label :パスワードの確認 %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-      </div>
+      <% unless current_user.provider == 'facebook'%>
+        <div class="field">
+          <%= f.label :パスワード %>
+          <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :パスワードの確認 %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+      <% end %>
       <br>
-      <div class="field">
-        <%= f.label :現在のパスワード %> <i>(変更を確認するために現在のパスワードが必要です)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-      </div>
-      </br>
       <div class="actions">
         <%= f.submit "Update" %>
       </div>
