@@ -1,6 +1,3 @@
-#csvデータを入れる実験
-require "csv"
-
 CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
   House.create(address: row[0],
               title: row[0],
@@ -14,22 +11,17 @@ CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
               toilet: row[8])
 end
 
+# 10.times do
+#   email = Faker::Internet.email
+#   password = "password"
+#   User.create!(
+#                 email: email,
+#                 password: password,
+#                 password_confirmation: password
+#   )
+# end
 
-
-
-10.times do
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(
-                email: email,
-                password: password,
-                password_confirmation: password
-  )
-end
-
-
-
-29.times do |i|
+27.times do |i|
   house_id = i+1
   content = Yoshida::Text.sentences(10).join
   Article.create!(
@@ -38,9 +30,8 @@ end
   )
 end
 
-
-29.times do
-  article_id = [*1..29].sample
+27.times do
+  article_id = [*1..27].sample
   avator = Faker::Avatar.image
   Image.create!(
     article_id: article_id,
@@ -48,9 +39,9 @@ end
   )
 end
 
-29.times do
+27.times do
   user_id = [*1..10].sample
-  house_id = [*1..29].sample
+  house_id = [*1..27].sample
   content = Yoshida::Text.sentence
   Comment.create!(
     user_id: user_id,
@@ -59,9 +50,9 @@ end
   )
 end
 
-29.times do
+27.times do
   user_id = [*1..10].sample
-  house_id = [*1..29].sample
+  house_id = [*1..27].sample
   Favorite.create!(
     user_id: user_id,
     house_id: house_id
