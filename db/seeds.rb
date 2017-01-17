@@ -29,7 +29,7 @@ end
 
 
 
-29.times do |i|
+26.times do |i|
   house_id = i+1
   content = Yoshida::Text.sentences(10).join
   Article.create!(
@@ -39,8 +39,8 @@ end
 end
 
 
-29.times do
-  article_id = [*1..29].sample
+26.times do
+  article_id = [*1..26].sample
   avator = Faker::Avatar.image
   Image.create!(
     article_id: article_id,
@@ -48,9 +48,9 @@ end
   )
 end
 
-29.times do
+26.times do
   user_id = [*1..10].sample
-  house_id = [*1..29].sample
+  house_id = [*1..26].sample
   content = Yoshida::Text.sentence
   Comment.create!(
     user_id: user_id,
@@ -59,9 +59,9 @@ end
   )
 end
 
-29.times do
+26.times do
   user_id = [*1..10].sample
-  house_id = [*1..29].sample
+  house_id = [*1..26].sample
   Favorite.create!(
     user_id: user_id,
     house_id: house_id
