@@ -59,4 +59,5 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'yoshida'
+  gem 'better_errors'
 end
