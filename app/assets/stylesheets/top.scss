@@ -1,6 +1,7 @@
 .main-picture {
-  height: 1000px;
-  background-size: cover;
+  width: 100%;
+  height: 2000px;
+  // background-size: cover;
   background: url('top-image.jpg') no-repeat;
 }
 .header {
@@ -13,6 +14,8 @@
   font-size: 60px;
   color: #FFFFFF;
   margin: 0;
+  background: image-url('zarigani.png') no-repeat;
+  background-size: contain;
 }
 .content {
   height: 200px;
@@ -21,4 +24,24 @@
 
 .navbar {
   margin-bottom: 0;
+}
+
+h1:after {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: image-url('zarigani.png') 0 0 no-repeat transparent;
+  position: absolute;
+  content: '';
+  background-size: contain;
+}
+
+h1:before {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: image-url('zarigani.png') 0 0 no-repeat transparent;
+  background-size: contain;
+  position: absolute;
+  content: '';
 }
