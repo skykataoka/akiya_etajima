@@ -37,4 +37,19 @@ class User < ActiveRecord::Base
     SecureRandom.uuid
   end
   
+  def calculate_profile
+    [self[:email],
+     self[:name],
+     self[:birthday],
+     self[:introduction],
+     self[:want_to_do],
+     self[:hobby],
+     self[:occupation],
+     self[:sex],
+     self[:spouse],
+     self[:child],
+     self[:number_of_occupants],
+     self[:budget_for_rent],
+     self[:budget_for_buy]]
+  end
 end
