@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   root 'top#index'
   
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
-  }
-
-  devise_for :users, controllers: {
+    registrations: 'users/registrations',
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   
