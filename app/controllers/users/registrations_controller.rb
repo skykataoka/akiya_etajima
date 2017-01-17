@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_hash[:occupation] = params[:occupation]
     new_hash[:sex] = params[:sex]
     new_hash[:spouse] = params[:spouse]
+    hash[:uid] = User.create_unique_string
     hash.merge!(new_hash)
     super
   end
