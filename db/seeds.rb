@@ -1,6 +1,3 @@
-#csvデータを入れる実験
-require "csv"
-
 CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
   House.create(address: row[0],
               title: row[0],
@@ -14,20 +11,15 @@ CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
               toilet: row[8])
 end
 
-
-
-
-10.times do
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(
-                email: email,
-                password: password,
-                password_confirmation: password
-  )
-end
-
-
+# 10.times do
+#   email = Faker::Internet.email
+#   password = "password"
+#   User.create!(
+#                 email: email,
+#                 password: password,
+#                 password_confirmation: password
+#   )
+# end
 
 26.times do |i|
   house_id = i+1
@@ -37,7 +29,6 @@ end
     content: content
   )
 end
-
 
 26.times do
   article_id = [*1..26].sample
