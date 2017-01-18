@@ -1,0 +1,4 @@
+<%= form_for(@message, url: choose_new_or_edit ) do |f| %>
+    <%= f.text_field :body %>
+    <%= f.submit '登録', class: 'btn btn-primary' %>
+<% end %>
