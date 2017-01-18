@@ -1,32 +1,79 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <h1>空き家の詳細</h1>
+  <div class="wrapper col-xl-12 col-md-8 col-md-offset-2 col-sm-10">
+    <h2 class="panel panel-info">空き家の詳細</h2>
     <p>更新日:<%= @house.updated_at %></p>
       <div class="row">
-        <h4><strong><%= @house.title %></strong></h4>
-        <p>本文:<%= @house.description %></p>
-        <p>記事:<%= @house.article.content %></p>
-        <% if @house.article.images[0] %>
-          <% @house.article.images.each do |image| %>
-          <p>画像:<br><%= image_tag(image.avator)%></p>
+          <h4><strong><%= @house.title %></strong></h4>
+          <p>本文:<%= @house.description %></p>
+          <p>記事:<%= @house.article.content %></p>
+          <% if @house.article.images[0] %>
+            <% @house.article.images.each do |image| %>
+            <p>画像:<br><%= image_tag(image.avator)%></p>
+            <% end %>
           <% end %>
-        <% end %>
-        <p>広さ:<%= @house.scale %></p>
-        <p>構造1:<%= @house.construction %></p>
-        <p>構造2:<%= @house.structure %></p>
-        <p>トイレ:<%= @house.toilet %></p>
-        <p>価格:<%= @house.price %></p>
-        <p>メモ:<%= @house.note %></p>          
-        <p>住所:<%= @house.address %></p>
-        <p>電話番号:<%= @house.tel %></p>
-        <p>メール:<%= @house.email %></p>
-        <p>売買可否:<%= @house.release_status %></p>
-        <p>賃貸可否:<%= @house.description %></p>
-        <div id="favorite">
-          <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+          <!--物件スペック情報-->
+          <div class="house-spec col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">項目</th>
+                  <th scope="col">詳細データ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">敷地面積</th>
+                  <td><%= @house.scale %></td>
+                </tr>
+                <tr>
+                  <th scope="row">構造1</th>
+                  <td><%= @house.construction %></td>
+                </tr>
+                <tr>
+                  <th scope="row">構造2</th>
+                  <td><%= @house.structure %></td>
+                </tr>
+                <tr>
+                  <th scope="row">トイレ</th>
+                  <td><%= @house.toilet %></td>
+                </tr>
+                <tr>
+                  <th scope="row">価格</th>
+                  <td><%= @house.price %></td>
+                </tr>
+                <tr>
+                  <th scope="row">メモ</th>
+                  <td><%= @house.note %></td>
+                </tr>
+                <tr>
+                  <th scope="row">住所</th>
+                  <td><%= @house.address %></td>
+                </tr>
+                <tr>
+                  <th scope="row">電話番号</th>
+                  <td><%= @house.tel %></td>
+                </tr>
+                <tr>
+                  <th scope="row">メール</th>
+                  <td><%= @house.email %></td>
+                </tr>
+                <tr>
+                  <th scope="row">売買可否</th>
+                  <td><%= @house.release_status %></td>
+                </tr>
+                <tr>
+                  <th scope="row">賃貸可否</th>
+                  <td><%= @house.expenses_status %></td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+          </div>
+          <div id="favorite">
+            <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+          </div>
+          <div id="detail-map"></div>
         </div>
-        <div id="detail-map"></div>
-      </div>
       <hr>
   </div>
   <div id="page-top-btn" class="page-top-btn">
