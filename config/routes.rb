@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
   
   resource :user, only: [:show, :edit, :update] do
-    resources :messages
+    resources :messages, only: [:index, :create, :edit, :update, :destroy]
   end
   get :mypage, to: 'users#show'
   
