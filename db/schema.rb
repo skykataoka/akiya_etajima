@@ -78,9 +78,8 @@ ActiveRecord::Schema.define(version: 20170119070000) do
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
-    t.boolean  "read",            default: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "conversation_id"
   end
 

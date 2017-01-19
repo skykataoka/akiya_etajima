@@ -3,7 +3,6 @@ class CreateMessages < ActiveRecord::Migration
     create_table :messages do |t|
       t.text :body
       t.references :user, index: true, foreign_key: true
-      t.boolean :read, default: false
 
       t.timestamps null: false
     end
