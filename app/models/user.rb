@@ -23,11 +23,6 @@ class User < ActiveRecord::Base
     end
     admin_user_id.first
   end
-  
-  def get_conversation
-    conversation = Conversation.find_or_create_by(sender_id: self.id, recipient_id: User.admin_user)
-    conversation.id
-  end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.find_by(email: auth.info.email)
