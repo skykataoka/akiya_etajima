@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   end
 
   resources :conversations do
-    resources :messages, only: [:index, :create, :edit, :update, :destroy]
-  end
-  
-  namespace :admin do
-    resources :conversations do
+    collection do
       resources :messages, only: [:index, :create, :edit, :update, :destroy]
     end
+  end
+
+  scope module: :admin do
+    resources :conversations
   end
 end

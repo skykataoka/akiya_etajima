@@ -1,9 +1,9 @@
 module MessagesHelper
   def choose_new_or_edit
     if action_name == 'index'
-      conversation_messages_path(params[:conversation_id])
+      messages_path
     else action_name == 'edit'
-      conversation_message_path(params[:conversation_id])
+      message_path
     end
   end
 end
