@@ -9,12 +9,12 @@ button{
 
 
 #delete-favorite-button {
-  color: #FFF000;
+  color: #E50012;
   background-color: #ffffff;
 }
 
 #add-favorite-button {
-  color: #DCDCDD;
+  color: #848484;
   background-color: #ffffff;
 
 }
@@ -30,4 +30,38 @@ button{
   color: #FFF000;
   opacity: 0.6;
   transition: 0.1s;
+}
+
+
+
+.balloon-box{
+    background: #fff;
+    position: relative;
+    text-align: center;
+    padding: 2px;
+    width: 110px;
+    height: 30px;
+    border: 1px solid #000;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.balloon-box:before {
+    content: "";
+    display: inline-block;
+    border: 10px solid transparent;
+    border-top-color: #000;
+    position: absolute;
+    left: 5px;
+    bottom: -20px;
+}
+.balloon-box:after {
+    content: "";
+    display: inline-block;
+    border: 9px solid transparent;
+    border-top-color: #fff;
+    position: absolute;
+    left: 6px;
+    bottom: -18px;
+
 }

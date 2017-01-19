@@ -1,14 +1,21 @@
 <div class="container">
   <div class="wrapper col-xl-12 col-md-8 col-md-offset-2 col-sm-10">
-    <h2 class="panel panel-info">空き家の詳細</h2>
-    <p>更新日:<%= @house.updated_at %></p>
+
       <div class="row">
-          <h4><strong><%= @house.title %></strong></h4>
+        　<ul class="list-inline">
+            <li><h4><strong><%= @house.title %></strong></h4></li>
+            <li><div id="favorite">
+              <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+            </div></li>
+          </ul>
+          <p>更新日:<%= @house.updated_at %></p>
+          <hr>
           <p>本文:<%= @house.description %></p>
           <p>記事:<%= @house.article.content %></p>
+          <!--画像表示-->
           <% if @house.article.images[0] %>
             <% @house.article.images.each do |image| %>
-            <p>画像:<br><%= image_tag(image.avator)%></p>
+            <p><%= image_tag(image.avator)%></p>
             <% end %>
           <% end %>
           <!--物件スペック情報-->
@@ -68,9 +75,6 @@
               </tbody>
             </table>
            </div>
-          </div>
-          <div id="favorite">
-            <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
           </div>
           <div id="detail-map"></div>
         </div>
