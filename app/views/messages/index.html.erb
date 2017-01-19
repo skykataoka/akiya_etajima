@@ -1,5 +1,30 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <% @current_admin_user_messages.each do |message| %>
+        <div class="item">
+          <% if message.user.id == current_user.id %>
+            <div class="message_<%= current_user.id %>" style="text-align: right">
+              <div class="message_header"><strong><%= message.user.name %></strong> <%= message.created_at %></div>
+              <div class="list">
+                <div class="item">
+                  <i class="right triangle icon"></i>
+                  <%= message.body %>
+                </div>
+              </div>
+            </div>
+          <%  else %>
+            <div class="message_admin" style="text-align: left">
+              <div class="message_header"><strong><%= message.user.name %></strong> <%= message.created_at %></div>
+              <div class="list">
+                <div class="item">
+                  <i class="right triangle icon"></i>
+                  <%= message.body %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
     <%= render 'form' %>
   </div>
 </div>
