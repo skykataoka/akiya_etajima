@@ -13,5 +13,14 @@ Rails.application.routes.draw do
   resources :houses do
     resources :favorites , only: [:create, :destroy]
   end
-  
+
+  resources :conversations do
+    collection do
+      resources :messages, only: [:index, :create, :edit, :update, :destroy]
+    end
+  end
+
+  scope module: :admin do
+    resources :conversations
+  end
 end

@@ -8,12 +8,20 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
- def favorite_houses
+  def favorite_houses
    houses
- end
+  end
   
   def status_admin?
     status === 3
+  end
+  
+  def self.admin_user
+    admin_user_id =[]
+    User.where(status: 3).each do |user|
+      admin_user_id << user.id
+    end
+    admin_user_id.first
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <% @conversations.each do |conversation| %>
+      <li><%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %></li>
+    <% end %>
+  </div>
+</div>
