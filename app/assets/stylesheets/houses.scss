@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .index-image{
-    width:150px;
+    width:200px;
 }
 
 .page-top-btn {
@@ -44,4 +44,12 @@
 
 .house-spec th {
   width: 35px;
+}
+
+.show-header {
+  display: inline-block;
+}
+
+.show-header > h4 {
+  display: block;
 }
