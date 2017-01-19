@@ -17,4 +17,10 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages, only: [:index, :create, :edit, :update, :destroy]
   end
+  
+  namespace :admin do
+    resources :conversations do
+      resources :messages, only: [:index, :create, :edit, :update, :destroy]
+    end
+  end
 end
