@@ -1,11 +1,14 @@
-.main-picture {
-    background: url(top-image.jpg) no-repeat center top;
+body.top {
+    background-image: url(top-image.jpg);
     background-position: center center;
-    text-align: center;
-    width: 100%;
-    min-height: 700px;
-    min-height: 804px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    text-align: center;
+}
+
+.row {
+  background-color: white;
 }
 
 .header {
@@ -52,7 +55,7 @@
 .top-title h1:after {
   display: inline-block;
   width: 100px;
-  height: 100px;
+  height: 96px;
   background: image-url('zarigani.png') 0 0 no-repeat transparent;
   position: absolute;
   content: '';
