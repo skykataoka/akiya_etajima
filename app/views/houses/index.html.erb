@@ -1,16 +1,20 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <h1>空き家一覧</h1>
+    <h2 class="text-center">空き家一覧</h2>
     <div id="map_all"></div>
     <% @houses.each do |house| %>
-      <div class="row">
-        <hr>
-        <h4><strong><%= link_to  house.title , house_path(house.id) %></strong></h4>
-        <p>本文:<%= house.description %></p>
-        <% if house.article.images[0] %>
-          <p>画像:<br><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
-        <% end %>
-        <%= link_to "詳細", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %>
+      <div class="index-house">
+        <div class="index-house-header list-inline">
+          <li><h4><strong><%= link_to  house.title , house_path(house.id) %></strong></h4></li>
+          <li>更新日:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
+          <li><%= link_to "詳細を見る", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %></li>
+        </div>
+        <div class="index-house-body list-inline">
+          <% if house.article.images[0] %>
+            <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
+          <% end %>
+            <p><%= truncate(house.article.content) %></p>
+        </div>
       </div>
     <% end %>
   </div>
