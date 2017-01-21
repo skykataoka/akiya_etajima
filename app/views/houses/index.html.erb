@@ -13,7 +13,9 @@
           <% if house.article.images[0] %>
             <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
           <% end %>
+          <div class="index-house-text">
             <p><%= truncate(house.article.content) %></p>
+          </div>
         </div>
       </div>
     <% end %>
