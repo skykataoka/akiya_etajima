@@ -67,11 +67,12 @@ img.index-image {
   background-color: #fff;
   margin: 10px 0px 0px 0px;
   padding: 10px;
+  overflow: hidden;
 }
 
 .index-house-header {
   padding: 0px 0px 0px 0px;
-  text-align: center;
+  text-align: left;
   border-bottom: dotted 0px #ffffff;
 }
 
@@ -79,4 +80,8 @@ img.index-image {
   padding: 0 10px;
   text-align: left;
   overflow: hidden;
+}
+
+.house-button-field {
+  float: right;
 }
