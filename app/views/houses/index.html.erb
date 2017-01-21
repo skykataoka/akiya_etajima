@@ -16,11 +16,17 @@
             <p><%= truncate(house.article.content) %></p>
           </div>
         </div>
-        <div class="house-button-field">
-          <%= link_to "詳細を見る", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %>
-        </div>
-        <div id="favorite_<%= house.id %>">
-          <%= render partial: 'houses/favorite', locals: { house: house, favorite: Favorite.get_favorite_info(current_user.id, house.id) } %>
+        <div class="house-buttons-field">
+          <div class="link_button-field">
+            <%= link_to "詳細を見る", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %>
+          </div>
+          <div class="favorite_button-field">
+          <% if current_user %>
+            <div id="favorite_<%= house.id %>">
+              <%= render partial: 'houses/favorite', locals: { house: house, favorite: Favorite.get_favorite_info(current_user&.id, house.id) } %>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     <% end %>
