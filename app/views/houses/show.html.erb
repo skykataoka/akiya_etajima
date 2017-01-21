@@ -8,12 +8,12 @@
               <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
             </div></li>
           </ul>
-          <p>更新日:<%= @house.updated_at %></p>
+          <p>更新日:<%= @house.updated_at.strftime("%Y-%m-%d") %></p>
           <hr>
           <p>本文:<%= @house.description %></p>
           <p>記事:<%= @house.article.content %></p>
-          <!--画像表示-->
           
+          <!--画像表示-->
           <div class="show-images">
           <% if @house.article.images[0] %>
             <% @house.article.images.each do |image| %>
