@@ -7,13 +7,26 @@
         <div class="index-house-header list-inline">
           <li><h4><strong><%= link_to  house.title , house_path(house.id) %></strong></h4></li>
           <li>更新日:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
-          <li><%= link_to "詳細を見る", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %></li>
         </div>
         <div class="index-house-body list-inline">
           <% if house.article.images[0] %>
             <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
           <% end %>
+          <div class="index-house-text">
             <p><%= truncate(house.article.content) %></p>
+          </div>
+        </div>
+        <div class="house-buttons-field">
+          <div class="link_button-field">
+            <%= link_to "詳細を見る", house_path(house.id), class: 'btn btn-default btn-sm btn-success' %>
+          </div>
+          <div class="favorite_button-field">
+          <% if current_user %>
+            <div id="favorite_<%= house.id %>">
+              <%= render partial: 'houses/favorite', locals: { house: house, favorite: Favorite.get_favorite_info(current_user&.id, house.id) } %>
+            </div>
+          <% end %>
+          </div>
         </div>
       </div>
     <% end %>

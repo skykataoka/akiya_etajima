@@ -1,8 +1,8 @@
 <% if house.favorites.find_by(user_id: current_user) %>
-    <!--<p class="balloon-box">ストック済み</p>-->
-    <%= link_to fa_icon("heart",class: "fa-2x"), house_favorite_path(favorite, house_id: house.id), id: "delete-favorite-button", method: :delete, remote: true %>
-    <span>ストック済み    ：現在<%= house.favorite_count %>人にストックされています</span>
+  <!--<p class="balloon-box">ストック済み</p>-->
+  <%= link_to fa_icon("heart",class: "fa-lg"), house_favorite_path(favorite, house_id: house.id), id: "delete-favorite-button", method: :delete, remote: true %>
+  <span>ストック済み    ：現在<%= house.favorite_count %>人にストックされています</span>
 <% else %>
-    <%= link_to fa_icon("heart",class: "fa-2x"), house_favorites_path(house.id), id: "add-favorite-button", method: :post, remote: true %>
-    <span>ストックする    ：現在<%= house.favorite_count ||= 0 %>人にストックされています<span>
+  <%= link_to fa_icon("heart",class: "fa-lg"), house_favorites_path(house.id), id: "add-favorite-button", method: :post, remote: true %>
+  <span>ストックする    ：現在<%= house.favorite_count ||= 0 %>人にストックされています</span>
 <% end %>
