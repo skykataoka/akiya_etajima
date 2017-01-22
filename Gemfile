@@ -42,6 +42,7 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'rails_12factor'
 
 group :development do
   gem 'dotenv-rails'
