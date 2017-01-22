@@ -43,6 +43,7 @@ gem 'cancancan'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rails_12factor'
+gem 'faker'
 
 group :development do
   gem 'dotenv-rails'
