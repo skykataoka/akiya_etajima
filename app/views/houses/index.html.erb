@@ -12,6 +12,7 @@
           <% if house.article.images[0] %>
             <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
           <% end %>
+<<<<<<< HEAD
           <div class="index-house-text">
             <p><%= truncate(house.article.content) %></p>
           </div>
@@ -27,6 +28,9 @@
             </div>
           <% end %>
           </div>
+=======
+            <p><%= truncate(strip_tags(house.article.content)) %></p>
+>>>>>>> 46113044afb1eb7d863633469d9f591e18966f32
         </div>
       </div>
     <% end %>
