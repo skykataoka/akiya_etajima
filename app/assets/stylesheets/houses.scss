@@ -1,9 +1,7 @@
-// Place all the styles related to the houses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.index-image {
-    width:200px;
+img.index-image {
+  margin-right: 15px;
+  width:200px;
+  float: left;
 }
 
 .show-images {
@@ -62,21 +60,36 @@
 }
 
 .index-house {
-    position: relative;
-    border-radius: 6px;
-    border: solid 1px #dedede;
-    box-shadow: 0 3px 0 0 rgba(0,0,0,.01), 0 2px 0 0 rgba(0,0,0,.03), 0 1px 0 0 rgba(0,0,0,.05);
-    background-color: #fff;
-    margin: 10px 0px 0px 0px;
-    padding: 10px;
+  position: relative;
+  border-radius: 6px;
+  border: solid 1px #dedede;
+  box-shadow: 0 3px 0 0 rgba(0,0,0,.01), 0 2px 0 0 rgba(0,0,0,.03), 0 1px 0 0 rgba(0,0,0,.05);
+  background-color: #fff;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .index-house-header {
-    padding: 0px 0px 0px 0px;
-    text-align: center;
-    border-bottom: dotted 0px #ffffff;
+  padding: 0px 0px 0px 0px;
+  text-align: left;
+  border-bottom: dotted 0px #ffffff;
 }
 
 .index-house-body {
-    text-align: center;
+  padding: 0 10px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.house-buttons-field {
+  margin-top: 5px;
+}
+
+.link_button-field {
+  float: right;
+}
+
+.favorite_button-field {
+  padding-top: 7px;
 }

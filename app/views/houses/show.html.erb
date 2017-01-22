@@ -2,9 +2,9 @@
   <div class="wrapper col-xl-12 col-md-8 col-md-offset-2 col-sm-10">
 
       <div class="row">
-        　<ul class="list-inline">
+         <ul class="list-inline">
             <li><h4><strong><%= @house.title %></strong></h4></li>
-            <li><div id="favorite">
+            <li><div id="favorite_<%= @house.id %>">
               <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
             </div></li>
           </ul>
