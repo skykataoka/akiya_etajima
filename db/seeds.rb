@@ -1,6 +1,5 @@
 CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
   House.create(address: row[0],
-              title: row[0],
               expenses_status: row[1],
               price: row[2],
               note: row[3],
@@ -8,26 +7,14 @@ CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
               structure: row[5],
               scale: row[6],
               construction: row[7],
-              toilet: row[8])
+              toilet: row[8],
+              title: row[9])
 end
 
-# 10.times do
-#   email = Faker::Internet.email
-#   password = "password"
-#   User.create!(
-#                 email: email,
-#                 password: password,
-#                 password_confirmation: password
-#   )
-# end
 
-27.times do |i|
-  house_id = i+1
-  content = Yoshida::Text.sentences(10).join
-  Article.create!(
-    house_id: house_id,
-    content: content
-  )
+CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
+  num = $.
+  Article.create(house_id: num, content: row[10])
 end
 
 27.times do
