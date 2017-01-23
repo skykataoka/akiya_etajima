@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
         name:     auth.extra.raw_info.name,
         provider: auth.provider,
         uid:      auth.uid,
-        introduction: auth.extra.raw_info.about,
+        email:    auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
         image_url:   auth.info.image,
         password: Devise.friendly_token[0, 20]
       )
