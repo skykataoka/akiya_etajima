@@ -1,26 +1,24 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10">
     <div class="user_panel">
       <div class="panel panel-default">
-        <div class="panel-heading">ユーザー情報</div>
-        <ul class="list-group">
-          <li class="list-group-item"><%= @user.name %></li>
-          <li class="list-group-item"><%= @user.email %></li>
-          <li class="list-group-item"><%= @user.birthday %></li>
-          <li class="list-group-item"><%= @user.address %></li>
-          <li class="list-group-item"><%= @user.introduction %></li>
-          <li class="list-group-item"><%= @user.want_to_do %></li>
-          <li class="list-group-item"><%= @user.hobby %></li>
-          <li class="list-group-item"><%= @user.skill %></li>
-          <li class="list-group-item"><%= @user.occupation %></li>
-          <li class="list-group-item"><%= @user.sex %></li>
-          <li class="list-group-item"><%= @user.spouse %></li>
-          <li class="list-group-item"><%= @user.child %></li>
-          <li class="list-group-item"><%= @user.number_of_occupants %> 人</li>
-          <li class="list-group-item"><%= @user.budget_for_rent %></li>
-          <li class="list-group-item"><%= @user.budget_for_buy %></li>
-        </ul>
+        <div class="panel-heading"><%= @user.name %> さん</div>
+          <li class="list-group-item"><strong class="info_name">メールアドレス</strong><br><hr><%= @user.email %></li>
+          <li class="list-group-item"><strong class="info_name">生年月日</strong><br><hr><%= @user.birthday %></li>
+          <li class="list-group-item"><strong class="info_name">住所</strong><br><hr><%= @user.address %></li>
+          <li class="list-group-item"><strong class="info_name">自己紹介</strong><br><hr><%= @user.introduction %></li>
+          <li class="list-group-item"><strong class="info_name">この地域でやりたいこと</strong><br><hr><%= @user.want_to_do %></li>
+          <li class="list-group-item"><strong class="info_name">趣味</strong><br><hr><%= @user.hobby %></li>
+          <li class="list-group-item"><strong class="info_name">特技・資格</strong><br><hr><%= @user.skill %></li>
+          <li class="list-group-item"><strong class="info_name">職業</strong><br><hr><%= @user.occupation %></li>
+          <li class="list-group-item"><strong class="info_name">性別</strong><br><hr><%= @user.sex %></li>
+          <li class="list-group-item"><strong class="info_name">未既婚</strong><br><hr><%= @user.spouse %></li>
+          <li class="list-group-item"><strong class="info_name">子どもの人数</strong><br><hr><%= @user.child %></li>
+          <li class="list-group-item"><strong class="info_name">入居人数</strong><br><hr><%= @user.number_of_occupants %> 人</li>
+          <li class="list-group-item"><strong class="info_name">希望賃貸額</strong><br><hr><%= @user.budget_for_rent %></li>
+          <li class="list-group-item"><strong class="info_name">希望購入額</strong><br><hr><%= @user.budget_for_buy %></li>
       </div>
+      <%= link_to 'プロフィールを編集する', edit_user_registration_path, class: 'btn btn-primary' %>
     </div>
     <div class="favorite_panel">
       <div class="panel panel-default">
@@ -34,7 +32,5 @@
         </ul>
       </div>
     </div>
-    <%= @user.email %>
-    <%= link_to 'プロフィールを編集する', edit_user_registration_path %>
   </div>
 </div>

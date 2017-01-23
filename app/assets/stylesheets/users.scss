@@ -4,6 +4,7 @@
 
 .user_panel {
   margin-top: 25px;
+  overflow: hidden;
 }
 
 a:hover, a:focus {
@@ -31,4 +32,21 @@ a:hover, a:focus {
 
 #root-sub-header a:hover, a:focus {
   color: #9a9a9a;
+}
+
+.user_panel {
+  word-wrap: break-word;
+}
+
+.user_panel hr {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.user_panel a.btn.btn-primary {
+  float: right;
+}
+
+.user_panel .panel {
+  margin-bottom: 10px;
 }
