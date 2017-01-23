@@ -33,6 +33,8 @@ class User < ActiveRecord::Base
         provider: auth.provider,
         uid:      auth.uid,
         email:    auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
+        birthday: Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y') ||= nil,
+        introduction: auth.extra.raw_info.about ||= nil,
         image_url:   auth.info.image,
         password: Devise.friendly_token[0, 20]
       )
