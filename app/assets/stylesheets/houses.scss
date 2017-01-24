@@ -5,7 +5,21 @@ img.index-image {
 }
 
 .show-images {
-  display: block;
+  display: inline-block;
+  background-color: #EBE5DD;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.show-image {
+  display: inline-block;
+  margin: 2px;
+  width: 47%;
+  float: center;
+}
+
+.madori {
+  width:90%;
 }
 
 .page-top-btn {
@@ -48,7 +62,8 @@ img.index-image {
 }
 
 .house-spec th {
-  width: 35px;
+  width: 120px;
+  background-color: #EBE5DD;
 }
 
 .show-header {
