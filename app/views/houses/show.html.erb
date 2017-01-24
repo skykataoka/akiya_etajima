@@ -2,16 +2,21 @@
   <div class="wrapper col-xl-12 col-md-8 col-md-offset-2 col-sm-10">
 
       <div class="row">
-         <ul class="list-inline">
+          <ul class="list-inline">
             <li><h4><strong><%= @house.title %></strong></h4></li>
             <li><div id="favorite_<%= @house.id %>">
               <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
             </div></li>
           </ul>
-          <p>更新日:<%= @house.updated_at.strftime("%Y-%m-%d") %></p>
+          <ul class="list-inline">
+          <li class="fa fa-pencil-square-o">:<%= @house.created_at.strftime("%Y-%m-%d") %></li>
+          <li class="fa fa-rotate-left">:<%= @house.updated_at.strftime("%Y-%m-%d") %></li>
           <hr>
+          </ul>
           <p><% @house.description %></p>
+          <div class="house-story">
           <p><%= @house.article.content.html_safe %></p>
+          </div>
           <hr>
           <!--画像表示-->
           <p class="text-center">空き家の様子</p>

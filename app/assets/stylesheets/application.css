@@ -14,7 +14,7 @@
  *= require_self
  *= require bootstrap-wysihtml5
  */
-
+ 
 .navbar-brand {
   background: url("etajima.svg") no-repeat left center;
   background-size: contain;
@@ -47,8 +47,7 @@ body {
 }
 
 .infomation-noitice{
-  text-align: center; 
+  text-align: center;
   color:#FFFFFF;
   background-color: #4080FF;
 }
-
