@@ -25,7 +25,7 @@
 
 img.index-image {
   margin-right: 15px;
-  width:200px;
+  width: 280px;
   float: left;
 }
 
@@ -34,6 +34,7 @@ img.index-image {
   background-color: #EBE5DD;
   border-radius: 5px;
   padding: 10px;
+  text-align: center;
 }
 
 .show-image {
@@ -106,24 +107,30 @@ img.index-image {
   box-shadow: 0 3px 0 0 rgba(0,0,0,.01), 0 2px 0 0 rgba(0,0,0,.03), 0 1px 0 0 rgba(0,0,0,.05);
   background-color: #fff;
   margin: 10px 0px 0px 0px;
-  padding: 10px;
+  padding: 0px;
   overflow: hidden;
 }
 
 .index-house-header {
-  padding: 0px 0px 0px 0px;
+  padding: 3px 3px 0px 10px;
   text-align: left;
-  border-bottom: dotted 0px #ffffff;
+  background-color: #EBE5DD;
 }
 
 .index-house-body {
-  padding: 0 10px;
+  padding: 0px 10px 0px 0px;
   text-align: left;
   overflow: hidden;
 }
 
+.index-house-text > p {
+  margin: 0px;
+}
+
 .house-buttons-field {
-  margin-top: 5px;
+  border-top: solid 1px #EBE5DD;
+  padding: 8px 20px 15px 20px;
+  min-height: 50px;
 }
 
 .link_button-field {
