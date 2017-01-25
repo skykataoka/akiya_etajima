@@ -2,38 +2,44 @@
   <div class="wrapper col-xl-12 col-md-8 col-md-offset-2 col-sm-10">
 
       <div class="row">
-         <ul class="list-inline">
+          <ul class="list-inline">
             <li><h4><strong><%= @house.title %></strong></h4></li>
             <li><div id="favorite_<%= @house.id %>">
               <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
             </div></li>
           </ul>
-          <p>更新日:<%= @house.updated_at.strftime("%Y-%m-%d") %></p>
+          <ul class="list-inline">
+          <li class="fa fa-pencil-square-o">:<%= @house.created_at.strftime("%Y-%m-%d") %></li>
+          <li class="fa fa-rotate-left">:<%= @house.updated_at.strftime("%Y-%m-%d") %></li>
           <hr>
-          <p>本文:<%= @house.description %></p>
-          <p>記事:<%= @house.article.content.html_safe %></p>
-          
+          </ul>
+          <p><% @house.description %></p>
+          <div class="house-story">
+          <p><%= @house.article.content.html_safe %></p>
+          </div>
+          <hr>
           <!--画像表示-->
+          <p class="text-center">空き家の様子</p>
           <div class="show-images">
           <% if @house.article.images[0] %>
-            <% @house.article.images.each do |image| %>
-            <div class="col-xl-3 col-md-6 col-sm-12">
-            <%= image_tag(image.avator) %>
-            </div>
+            <% @house.article.images.first(7).each do |image| %>
+            <%= image_tag(image.avator,:class => "show-image") %>
             <% end %>
           <% end %>
+          <img class="madori" src="<%= @house.article.images[7].avator %>">
           </div>
-          
           <hr>
           <!--物件スペック情報-->
-          <div class="house-spec col-xl-6 col-xl-offset-3 col-md-6 col-md-offset-3 col-sm-12">
+          <% if user_signed_in? %>
+          <p class="text-center">詳細情報</p>
+          <div class="house-spec">
             <table class="table table-bordered">
-              <thead>
+              <!-- <thead>
                 <tr>
                   <th scope="col">項目</th>
                   <th scope="col">詳細データ</th>
                 </tr>
-              </thead>
+              </thead> -->
               <tbody>
                 <tr>
                   <th scope="row">敷地面積</th>
@@ -82,6 +88,7 @@
               </tbody>
             </table>
            </div>
+          <% end %>
           </div>
           <div class="message_btn_filed">
             <%= link_to messages_path, class: 'btn btn-info btn-lg' do %>

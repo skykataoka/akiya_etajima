@@ -1,3 +1,28 @@
+.house-story > h2 {
+   position: relative;
+   border: none;
+   font-size: 1.25em;
+   padding: 0.8em 1.1em;
+   margin-top: 2.1em;
+   margin-bottom: 1em;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   background: #13acca;
+   color: #ffffff;
+   box-shadow: 0 1px 5px rgba(0, 0, 0, .03);
+}
+
+.house-story > h3 {
+    position: relative;
+    color: #111;
+    font-size: 1.143em;
+    font-weight: bold;
+    margin: 0 0 1.5em;
+    padding: 0.5em 0.5em 0.5em 1.7em;
+    border-bottom: 3px solid #13acca;
+}
+
 img.index-image {
   margin-right: 15px;
   width:200px;
@@ -5,7 +30,21 @@ img.index-image {
 }
 
 .show-images {
-  display: block;
+  display: inline-block;
+  background-color: #EBE5DD;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.show-image {
+  display: inline-block;
+  margin: 2px;
+  width: 47%;
+  float: center;
+}
+
+.madori {
+  width:90%;
 }
 
 .page-top-btn {
@@ -48,7 +87,8 @@ img.index-image {
 }
 
 .house-spec th {
-  width: 35px;
+  width: 120px;
+  background-color: #EBE5DD;
 }
 
 .show-header {
