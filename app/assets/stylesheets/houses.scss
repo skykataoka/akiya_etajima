@@ -9,7 +9,7 @@
    -moz-border-radius: 3px;
    border-radius: 3px;
    background: #13acca;
-   color: #ffffff;
+   color: #f0f8ff;
    box-shadow: 0 1px 5px rgba(0, 0, 0, .03);
 }
 
@@ -45,7 +45,7 @@ img.index-image {
 }
 
 .madori {
-  width:90%;
+  width:100%;
 }
 
 .page-top-btn {
@@ -115,6 +115,11 @@ img.index-image {
   padding: 3px 3px 0px 10px;
   text-align: left;
   background-color: #EBE5DD;
+}
+
+.index-house-header > li > h4 {
+  text-shadow: #fffafa 1px 1px 0px, #fffafa -1px 1px 0px,
+             #fffafa 1px -1px 0px, #fffafa -1px -1px 0px;
 }
 
 .index-house-body {

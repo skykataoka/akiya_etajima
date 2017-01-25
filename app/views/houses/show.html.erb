@@ -29,8 +29,10 @@
               <%= image_tag(image.avator,:class => "show-image") %>
               <% end %>
             <% end %>
-            <img class="madori" src="<%= @house.article.images[7].avator %>">
             </div>
+            <hr>
+            <p class="text-center">間取り図</p>
+            <img class="madori" src="<%= @house.article.images[7].avator %>">
             <hr>
             <!--物件スペック情報-->
             <p class="text-center">詳細情報</p>
@@ -42,11 +44,11 @@
                     <td><%= @house.scale %></td>
                   </tr>
                   <tr>
-                    <th scope="row">構造1</th>
+                    <th scope="row">建築年</th>
                     <td><%= @house.construction %></td>
                   </tr>
                   <tr>
-                    <th scope="row">構造2</th>
+                    <th scope="row">用途</th>
                     <td><%= @house.structure %></td>
                   </tr>
                   <tr>
