@@ -6,7 +6,8 @@
       <div class="index-house">
         <div class="index-house-header list-inline">
           <li><h4><strong><%= link_to  house.title , house_path(house.id) %></strong></h4></li>
-          <li>更新日:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
+          <li class="fa fa-pencil-square-o">:<%= house.created_at.strftime("%Y-%m-%d") %></li>
+          <li class="fa fa-rotate-left">:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
         </div>
         <div class="index-house-body list-inline">
           <% if house.article.images[0] %>
