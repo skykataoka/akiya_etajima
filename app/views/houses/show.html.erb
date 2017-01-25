@@ -90,6 +90,11 @@
            </div>
           <% end %>
           </div>
+          <div class="message_btn_filed">
+            <%= link_to messages_path, class: 'btn btn-info btn-lg' do %>
+              <i class="fa fa-search" aria-hidden="true"></i><%= ' ' + @house.title + ' についてもっと調べる' %>
+            <% end %>
+          </div>
           <div id="detail-map"></div>
         </div>
       <hr>

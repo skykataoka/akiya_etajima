@@ -3,10 +3,10 @@ class MessagesController < ApplicationController
     @message = Message.new
     if current_user.status_admin?
       @conversation = Conversation.find_by(sender_id: params[:user_id])
-      @messages = Message.where("(user_id = ?) OR (user_id = ?)", params[:user_id], User.admin_user)
+      @messages = @conversation.messages
     else
       @conversation = Conversation.find_or_create_by(sender_id: current_user.id, recipient_id: User.admin_user)
-      @messages = Message.where("(user_id = ?) OR (user_id = ?)", current_user.id, User.admin_user)
+      @messages = @conversation.messages
     end
   end
 
