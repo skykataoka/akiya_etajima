@@ -1,7 +1,31 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <% @conversations.each do |conversation| %>
-      <li><%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %></li>
+      <% unless conversation.messages.empty? %>
+          <% if conversation.messages.last.user_id === admin_status %>
+            <div class="conversation_from_user_field">
+              <li>
+                <%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %>
+                <div class="message_time">
+                  <%= '最終投稿時間: ' + conversation.messages.last.created_at.strftime('%Y/%m/%d %H:%M') %>
+                </div>
+              </li>
+            </div>
+         <% else %>
+          <div class="conversation_to_admin_field">
+            <li>
+              <%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %>
+              <div class="message_time">
+                <%= '最終投稿時間: ' + conversation.messages.last.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+            </li>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="conversation_from_user_field">
+          <li><%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %></li>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

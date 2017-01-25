@@ -1,3 +1,24 @@
-// Place all the styles related to the Conversations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.conversation_from_user_field {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+}
+
+.conversation_to_admin_field {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 7px;
+}
+
+.conversation_to_admin_field a {
+  color: #d43f3a;
+}
+
+.message_time {
+  float: right;
+  padding-right: 10px;
+}
