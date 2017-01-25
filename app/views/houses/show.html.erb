@@ -100,9 +100,7 @@
         <div id="detail-map"></div>
         </div>
   </div>
-  <div id="page-top-btn" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top">▲</a></p>
-  </div>
+  <%= render partial: 'return' %>
 <script>
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'detail-map'}}, function(){
