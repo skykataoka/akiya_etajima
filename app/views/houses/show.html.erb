@@ -4,9 +4,11 @@
       <div class="row">
           <ul class="list-inline">
             <li><h4><strong><%= @house.title %></strong></h4></li>
-            <li><div id="favorite_<%= @house.id %>">
-              <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
-            </div></li>
+            <% if current_user %>
+              <li><div id="favorite_<%= @house.id %>">
+                <%= render partial: 'houses/favorite', locals: { house: @house, favorite: @favorite } %>
+              </div></li>
+            <% end %>
           </ul>
           <ul class="list-inline">
           <li class="fa fa-pencil-square-o">:<%= @house.created_at.strftime("%Y-%m-%d") %></li>
@@ -18,92 +20,89 @@
           <p><%= @house.article.content.html_safe %></p>
           </div>
           <hr>
-          <!--画像表示-->
-          <p class="text-center">空き家の様子</p>
-          <div class="show-images">
-          <% if @house.article.images[0] %>
-            <% @house.article.images.first(7).each do |image| %>
-            <%= image_tag(image.avator,:class => "show-image") %>
+          <% if current_user %>
+            <!--画像表示-->
+            <p class="text-center">空き家の様子</p>
+            <div class="show-images">
+            <% if @house.article.images[0] %>
+              <% @house.article.images.first(7).each do |image| %>
+              <%= image_tag(image.avator,:class => "show-image") %>
+              <% end %>
             <% end %>
+            <img class="madori" src="<%= @house.article.images[7].avator %>">
+            </div>
+            <hr>
+            <!--物件スペック情報-->
+            <p class="text-center">詳細情報</p>
+            <div class="house-spec">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <th scope="row">敷地面積</th>
+                    <td><%= @house.scale %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">構造1</th>
+                    <td><%= @house.construction %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">構造2</th>
+                    <td><%= @house.structure %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">トイレ</th>
+                    <td><%= @house.toilet %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">価格</th>
+                    <td><%= @house.price %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">メモ</th>
+                    <td><%= @house.note %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">住所</th>
+                    <td><%= @house.address %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">電話番号</th>
+                    <td><%= @house.tel %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">メール</th>
+                    <td><%= @house.email %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">売買可否</th>
+                    <td><%= @house.release_status %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">賃貸可否</th>
+                    <td><%= @house.expenses_status %></td>
+                  </tr>
+                </tbody>
+              </table>
+             </div>
+            </div>
+            <div class="message_btn_filed">
+              <%= link_to messages_path, class: 'btn btn-info btn-lg' do %>
+                <i class="fa fa-search" aria-hidden="true"></i><%= ' ' + @house.title + ' についてもっと調べる' %>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="user_login_button_filed">
+              <%= link_to new_user_session_path, class: 'btn btn-success btn-lg' do %>
+                <i class="fa fa-search" aria-hidden="true"></i><%= 'お宝の続きはこちら' %>
+              <% end %>
+            </div>
           <% end %>
-          <img class="madori" src="<%= @house.article.images[7].avator %>">
-          </div>
-          <hr>
-          <!--物件スペック情報-->
-          <% if user_signed_in? %>
-          <p class="text-center">詳細情報</p>
-          <div class="house-spec">
-            <table class="table table-bordered">
-              <!-- <thead>
-                <tr>
-                  <th scope="col">項目</th>
-                  <th scope="col">詳細データ</th>
-                </tr>
-              </thead> -->
-              <tbody>
-                <tr>
-                  <th scope="row">敷地面積</th>
-                  <td><%= @house.scale %></td>
-                </tr>
-                <tr>
-                  <th scope="row">構造1</th>
-                  <td><%= @house.construction %></td>
-                </tr>
-                <tr>
-                  <th scope="row">構造2</th>
-                  <td><%= @house.structure %></td>
-                </tr>
-                <tr>
-                  <th scope="row">トイレ</th>
-                  <td><%= @house.toilet %></td>
-                </tr>
-                <tr>
-                  <th scope="row">価格</th>
-                  <td><%= @house.price %></td>
-                </tr>
-                <tr>
-                  <th scope="row">メモ</th>
-                  <td><%= @house.note %></td>
-                </tr>
-                <tr>
-                  <th scope="row">住所</th>
-                  <td><%= @house.address %></td>
-                </tr>
-                <tr>
-                  <th scope="row">電話番号</th>
-                  <td><%= @house.tel %></td>
-                </tr>
-                <tr>
-                  <th scope="row">メール</th>
-                  <td><%= @house.email %></td>
-                </tr>
-                <tr>
-                  <th scope="row">売買可否</th>
-                  <td><%= @house.release_status %></td>
-                </tr>
-                <tr>
-                  <th scope="row">賃貸可否</th>
-                  <td><%= @house.expenses_status %></td>
-                </tr>
-              </tbody>
-            </table>
-           </div>
-          <% end %>
-          </div>
-          <div class="message_btn_filed">
-            <%= link_to messages_path, class: 'btn btn-info btn-lg' do %>
-              <i class="fa fa-search" aria-hidden="true"></i><%= ' ' + @house.title + ' についてもっと調べる' %>
-            <% end %>
-          </div>
-          <div id="detail-map"></div>
+        <div id="detail-map"></div>
         </div>
-      <hr>
   </div>
   <div id="page-top-btn" class="page-top-btn">
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
   </div>
-
-
 <script>
   var handler = Gmaps.build('Google');
   handler.buildMap({ internal: {id: 'detail-map'}}, function(){
