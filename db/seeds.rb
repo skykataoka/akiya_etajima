@@ -34,8 +34,10 @@ end
   Image.create!(
     article_id: article_id,
     avator: avator
-  )  
+  )
 end
+
+User.create!(name: "事務局", email: "etajima@akiya.com", password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'], status: 3)
 
 # 27.times do
 #   user_id = [*1..10].sample

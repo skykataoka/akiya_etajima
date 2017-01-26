@@ -9,7 +9,7 @@
    -moz-border-radius: 3px;
    border-radius: 3px;
    background: #13acca;
-   color: #ffffff;
+   color: #f0f8ff;
    box-shadow: 0 1px 5px rgba(0, 0, 0, .03);
 }
 
@@ -25,7 +25,7 @@
 
 img.index-image {
   margin-right: 15px;
-  width: 280px;
+  width: 260px;
   float: left;
 }
 
@@ -45,7 +45,7 @@ img.index-image {
 }
 
 .madori {
-  width:90%;
+  width:100%;
 }
 
 .page-top-btn {
@@ -117,10 +117,22 @@ img.index-image {
   background-color: #EBE5DD;
 }
 
+.index-house-header > li > h4 {
+  text-shadow: #fffafa 1px 1px 0px, #fffafa -1px 1px 0px,
+             #fffafa 1px -1px 0px, #fffafa -1px -1px 0px;
+}
+
 .index-house-body {
   padding: 0px 10px 0px 0px;
   text-align: left;
   overflow: hidden;
+}
+
+.index-house-body .table.table>tbody>tr>td {
+    padding: 0px;
+    line-height: 1.65;
+    vertical-align: middle;
+    border-top: 0px solid #ddd;
 }
 
 .index-house-text > p {
