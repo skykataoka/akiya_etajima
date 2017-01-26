@@ -16,18 +16,18 @@
 
 div[class*="messages_user_"] {
   margin: 15px 0px 15px 400px;
-  background-color: #f7f7f7;
   height: auto;
   padding: 20px 20px 20px 20px;
   border-radius: 6px;
   word-wrap: break-word;
+  border: 1px solid #cccccc;
 }
 
 div[class*="messages_admin"] {
   margin: 15px 400px 15px 0px;
-  background-color: #dadada;
   height: auto;
   padding: 20px 0px 20px 20px;
   border-radius: 6px;
   word-wrap: break-word;
+  border: 1px solid #cccccc;
 }
