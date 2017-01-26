@@ -9,6 +9,7 @@ CSV.foreach('db/akiya_lists_for_demoday.csv') do |row|
               construction: row[7],
               toilet: row[8],
               title: row[9])
+  sleep(1)
 end
 
 
