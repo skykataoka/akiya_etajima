@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name)
 
+  #ログイン後のリダイレクトをログイン前のページにする場合
+  def after_sign_in_path_for(resource)
+    session[:referrer] || root_path
+  end
+  
   protected
 
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
