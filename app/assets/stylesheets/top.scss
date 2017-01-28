@@ -72,6 +72,12 @@ body.top {
   font-weight: 600;
   color: #FFFFFF;
   text-shadow: 0px 1px 1px #333333;
+  box-shadow: 0px 7px 0px rgba(19,74,99,1);
+}
+
+.top-title h2:active {
+  box-shadow: none;
+  transform: translate3d(0, 5px, 0);
 }
 
 .top-title a {
