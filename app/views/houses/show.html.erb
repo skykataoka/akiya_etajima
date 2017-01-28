@@ -56,32 +56,20 @@
                     <td><%= @house.toilet %></td>
                   </tr>
                   <tr>
+                    <th scope="row">住所</th>
+                    <td><%= @house.address %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">売買/賃貸</th>
+                    <td><%= @house.expenses_status %></td>
+                  </tr>
+                  <tr>
                     <th scope="row">価格</th>
                     <td><%= @house.price %></td>
                   </tr>
                   <tr>
                     <th scope="row">メモ</th>
                     <td><%= @house.note %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">住所</th>
-                    <td><%= @house.address %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">電話番号</th>
-                    <td><%= @house.tel %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">メール</th>
-                    <td><%= @house.email %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">売買可否</th>
-                    <td><%= @house.release_status %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">賃貸可否</th>
-                    <td><%= @house.expenses_status %></td>
                   </tr>
                 </tbody>
               </table>
