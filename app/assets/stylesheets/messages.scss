@@ -1,6 +1,6 @@
 #message_body {
   width: 460px;
-  height: 100px !important;
+  height: 230px !important;
 }
 
 .message_body {
@@ -21,6 +21,7 @@ div[class*="messages_user_"] {
   border-radius: 6px;
   word-wrap: break-word;
   border: 1px solid #cccccc;
+  width: 500px;
 }
 
 div[class*="messages_admin"] {
@@ -30,4 +31,5 @@ div[class*="messages_admin"] {
   border-radius: 6px;
   word-wrap: break-word;
   border: 1px solid #cccccc;
+  width: 500px;
 }
