@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resource :user, only: [:show, :edit, :update]
   get :mypage, to: 'users#show'
   
-  resources :houses do
+  resources :houses, only: [:index, :show] do
     resources :favorites , only: [:create, :destroy]
   end
 
