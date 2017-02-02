@@ -10,21 +10,15 @@
           <li class="fa fa-rotate-left">:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
         </div>
         <div class="index-house-body list-inline">
-          <div class="table-responsive">
-            <table class="table">
-            <tr>
-              <td>
+          <div class="index-house-body-left">
                 <% if house.article.images[0] %>
                   <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
                 <% end %>
-              </td>
-              <td>
+          </div>
+          <div class="index-house-body-right">
                 <div class="index-house-text">
                   <p><%= truncate(strip_tags(house.article.content)) %></p>
                 </div>
-              </td>
-            </tr>
-            </table>
           </div>
         </div>
         <div class="house-buttons-field">

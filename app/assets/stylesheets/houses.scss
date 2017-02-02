@@ -116,16 +116,20 @@ img.index-image {
 }
 
 .index-house-body {
-  padding: 0px 10px 0px 0px;
+  padding: 0px 0px 0px 0px;
   text-align: left;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
-.index-house-body .table.table>tbody>tr>td {
-    padding: 0px;
-    line-height: 1.65;
-    vertical-align: middle;
-    border-top: 0px solid #ddd;
+.index-house-body-left {
+  width:35%;
+  height: 150px;
+  display: block;
+}
+
+.index-house-body-right {
+  width:55%;
+  height: 150px;
 }
 
 .index-house-text > p {
