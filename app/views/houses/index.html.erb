@@ -52,10 +52,6 @@
     var markers = handler.addMarkers(markers_json);
     handler.bounds.extendWith(markers);
     for (var i = 0; i < markers.length; i++) {
-      var link = markers_json[i].link;
-      google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(){
-        window.location.href = link;
-      })
       attachSecretMessage(markers[i], markers_json[i]);
     }
     function attachSecretMessage(marker, markers_json) {
@@ -68,6 +64,9 @@
       google.maps.event.addListener(marker.getServiceObject(), 'mouseout', function(){
         infowindow.close();
       });
+      google.maps.event.addListener(marker.getServiceObject(), 'click', function(){
+        window.location.href = markers_json.link;
+      })
     }
     handler.fitMapToBounds();
   });
