@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="user_panel">
+      <div class="panel panel-default">
+        <div class="panel-heading">ユーザー一覧</div>
+        <% @users.each do |user| %>
+            <li class="list-group-item">
+              <strong class="info_name"><%= link_to user.name, user_path(user) %></strong>
+            </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

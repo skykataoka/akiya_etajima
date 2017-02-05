@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   
-  resource :user, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   get :mypage, to: 'users#show'
   
   resources :houses, only: [:index, :show] do
