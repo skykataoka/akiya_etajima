@@ -9,15 +9,21 @@ body.top {
 
 .top-couteiner {
   margin: auto;
-  padding: 100px 30px 200px 30px;
+  padding: 100px 20px 200px 20px;
+  @media (max-width: 768px) {
+  padding: 100px 0px 100px 0px;
+  }
 }
 
 .top-title {
   margin: auto;
   margin-top: 100px;
-  padding: 10px 50px 10px 50px;
-  width: 70%;
+  padding: 20px 0px 20px 0px;
+  width: 80%;
   background-color: rgba(80,90,83,0.4);
+  @media (max-width: 768px) {
+  width: 100%;
+  }
 }
 
 .top-title h1 {
@@ -26,6 +32,12 @@ body.top {
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 1px 1px 3px #000;
+  @media (max-width: 768px) {
+  font-size: 5.0em;
+  }
+  @media (max-width: 420px) {
+  font-size: 3.0em;
+  }
 }
 
 .top-title h1:after {
@@ -36,6 +48,10 @@ body.top {
   position: absolute;
   content: '';
   background-size: contain;
+  @media (max-width: 420px) {
+  width: 50px;
+  height: 48px;
+  }
 }
 
 .top-title h2 {
