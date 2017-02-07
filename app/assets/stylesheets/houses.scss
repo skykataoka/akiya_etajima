@@ -24,9 +24,7 @@
 }
 
 img.index-image {
-  margin-right: 15px;
-  width: 260px;
-  float: left;
+  width: 100%;
 }
 
 .show-images {
@@ -116,20 +114,25 @@ img.index-image {
 }
 
 .index-house-body {
+  margin-bottom: -10px;
   padding: 0px 0px 0px 0px;
   text-align: left;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .index-house-body-left {
-  width:35%;
-  height: 150px;
-  display: block;
+  margin-left: 0px;
+  padding: 0px 0px;
+  //width:35%;
+  //height: 150px;
+  //display: block;
 }
 
 .index-house-body-right {
-  width:55%;
-  height: 150px;
+  margin-left: 0px;
+  padding: 5px 5px 5px 5px;
+  //width:55%;
+  //height: 150px;
 }
 
 .index-house-text > p {
@@ -137,9 +140,14 @@ img.index-image {
 }
 
 .house-buttons-field {
+  margin-top: 10px;
   border-top: solid 1px #EBE5DD;
   padding: 8px 20px 15px 20px;
   min-height: 50px;
+}
+
+.house-buttons-field a.btn.btn-default.btn-sm.btn-success {
+  margin-top: 5px;
 }
 
 .link_button-field {
@@ -147,7 +155,7 @@ img.index-image {
 }
 
 .favorite_button-field {
-  padding-top: 7px;
+  margin-top: 10px;
 }
 
 .message_btn_filed {

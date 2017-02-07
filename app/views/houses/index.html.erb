@@ -9,13 +9,13 @@
           <li class="fa fa-pencil-square-o">:<%= house.created_at.strftime("%Y-%m-%d") %></li>
           <li class="fa fa-rotate-left">:<%= house.updated_at.strftime("%Y-%m-%d") %></li>
         </div>
-        <div class="index-house-body list-inline">
-          <div class="index-house-body-left">
+        <div class="index-house-body">
+          <div class="index-house-body-left col-xs-12 col-md-6">
                 <% if house.article.images[0] %>
-                  <p><%= image_tag(house.article.images[0].avator, :class => "index-image") %></p>
+                  <%= image_tag(house.article.images[0].avator, :class => "index-image") %>
                 <% end %>
           </div>
-          <div class="index-house-body-right">
+          <div class="index-house-body-right  col-xs-12 col-md-6">
                 <div class="index-house-text">
                   <p><%= truncate(strip_tags(house.article.content)) %></p>
                 </div>
