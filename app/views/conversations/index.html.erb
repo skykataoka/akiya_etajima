@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
     <% @conversations.each do |conversation| %>
       <% unless conversation.messages.empty? %>
-          <% if conversation.messages.last.user_id === admin_status %>
+          <% if conversation.messages.last.user.status === admin_status %>
             <div class="conversation_from_user_field">
               <li>
                 <%= link_to conversation.sender.name, messages_path(user_id: conversation.sender.id) %>
