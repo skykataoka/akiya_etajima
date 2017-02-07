@@ -76,7 +76,7 @@
             </div>
             <div class="message_btn_filed">
               <%= link_to messages_path, class: 'btn btn-info btn-lg' do %>
-                <i class="fa fa-search" aria-hidden="true"></i><%= ' ' + @house.title + ' についてもっと調べる' %>
+                <i class="fa fa-search" aria-hidden="true"></i> <%= @house.title %><br class="visible-xs-block"> についてもっと調べる
               <% end %>
             </div>
           <% else %>
