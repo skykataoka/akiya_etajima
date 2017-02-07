@@ -1,6 +1,5 @@
 #message_body {
-  width: 460px;
-  height: 230px !important;
+  height: 200px !important;
 }
 
 .message_body {
@@ -15,21 +14,19 @@
 }
 
 div[class*="messages_user_"] {
-  margin: 15px 0px 15px 400px;
   height: auto;
+  margin-top: 15px;
   padding: 20px 20px 20px 20px;
   border-radius: 6px;
   word-wrap: break-word;
   border: 1px solid #cccccc;
-  width: 500px;
 }
 
 div[class*="messages_admin"] {
-  margin: 15px 400px 15px 0px;
   height: auto;
+  margin-top: 15px;
   padding: 20px 20px 20px 20px;
   border-radius: 6px;
   word-wrap: break-word;
   border: 1px solid #cccccc;
-  width: 500px;
 }
