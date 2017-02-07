@@ -7,7 +7,13 @@
         <div class="item">
           <% if message.user.id == current_user.id %>
             <div class="messages_user_<%= current_user.id %> col-xs-10 col-xs-offset-2 col-md-8 col-md-offset-4" style="text-align: right">
-              <div class="message_header"><strong><%= message.user.name %></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+              <div class="message_header">
+                <% if current_user.status === admin_status %>
+                    <strong><%= link_to message.user.name, user_path(message.user) %></strong></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
+                <% else %>
+                    <strong><%= message.user.name %></strong></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
+                <% end %>
+              </div>
               <div class="list">
                 <div class="item">
                   <br>
@@ -17,7 +23,13 @@
             </div>
           <%  else %>
             <div class="messages_admin col-xs-10 col-md-8" style="text-align: left">
-              <div class="message_header"><strong><%= message.user.name %></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+              <div class="message_header">
+                <% if current_user.status === admin_status %>
+                  <strong><%= link_to message.user.name, user_path(message.user) %></strong></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
+                <% else %>
+                  <strong><%= message.user.name %></strong></strong><br><%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
+                <% end %>
+              </div>
               <div class="list">
                 <div class="item">
                   <br>
